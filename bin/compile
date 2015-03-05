@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+BIN_PATH="$1/bin"
+TMP_PATH="$1/tmp"
+
+mkdir -p $BIN_PATH $TMP_PATH
+
+HTML_2_TEXT_URL="http://mirrors.kernel.org/ubuntu/pool/main/h/html2text/html2text_1.3.2a-15_amd64.deb"
+HTML_2_TEXT_PKG="$TMP_PATH/html2text.deb"
+HTML_2_TEXT_PATH="$TMP_PATH/html2text"
+HTML_2_TEXT_BINARIES="$HTML_2_TEXT_PATH/usr/bin"
+
+echo "-----> Install html2text package"
+curl -L $HTML_2_TEXT_URL -o $HTML_2_TEXT_PKG
+dpkg -x $HTML_2_TEXT_PKG $HTML_2_TEXT_PATH
+chmod +x $HTML_2_TEXT_BINARIES/*
+mv $HTML_2_TEXT_BINARIES/* $BIN_PATH/
+rm -rf $HTML_2_TEXT_PKG $HTML_2_TEXT_PATH
+
+exit 0
