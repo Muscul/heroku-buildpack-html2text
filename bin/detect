@@ -1,4 +1,0 @@
-#!/bin/sh
-
-echo "html2text"
-exit 0
