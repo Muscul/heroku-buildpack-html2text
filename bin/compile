@@ -7,7 +7,7 @@ TMP_PATH="$1/tmp"
 
 mkdir -p $BIN_PATH $TMP_PATH
 
-HTML_2_TEXT_URL="http://mirrors.kernel.org/ubuntu/pool/main/h/html2text/html2text_1.3.2a-15_amd64.deb"
+HTML_2_TEXT_URL="https://github.com/Muscul/heroku-buildpack-html2text/raw/bin/html2text_1.3.2a-21_amd64.deb"
 HTML_2_TEXT_PKG="$TMP_PATH/html2text.deb"
 HTML_2_TEXT_PATH="$TMP_PATH/html2text"
 HTML_2_TEXT_BINARIES="$HTML_2_TEXT_PATH/usr/bin"
